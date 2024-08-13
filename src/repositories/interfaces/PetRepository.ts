@@ -37,16 +37,15 @@ export default class PetRepository implements InterfacePetRepository {
         }
     }
 
-    async deletaPet(
-        id: number 
-        ): Promise<{success: boolean; message?:string }>{
+    async deletaPet(id: number): Promise<{success: boolean; message?:string }>{
             try{
                 const petToRemove = await this.respository.findOne({where:{id}});
 
                 if(!petToRemove){
-                    return (success:false, message:"Pet não encontrado");
+                    return {success:false, message:"Pet não encontrado"};
                 }
                 await this.respository.remove(petToRemove);
+
                 return {success:true};
             }catch (error){
                 return {
@@ -55,4 +54,4 @@ export default class PetRepository implements InterfacePetRepository {
                 };
             }
         }
-    
+}
