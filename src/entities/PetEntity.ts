@@ -16,7 +16,12 @@ export default class PetEntity {
     @Column()
     adotado: boolean;
 
-    constructor(nome: string, especie: EnumEspecie, dataDeNascimento: Date, adotado: boolean) {
+    constructor(
+        nome: string,
+        especie: EnumEspecie,
+        dataDeNascimento: Date,
+        adotado: boolean
+    ) {
         this.nome = nome;
         this.especie = especie;
         this.dataDeNascimento = dataDeNascimento;
