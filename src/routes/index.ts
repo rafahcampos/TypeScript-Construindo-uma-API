@@ -1,7 +1,6 @@
 import express from "express";
 import petRouter from "../routes/petRouter";
-import adotanteRouter from "../router/adotanteRouter";
-
+import adotanteRouter from "./adotanteRouter"
 const router = (app:express.Router) => {
     app.use("/pets", petRouter);
     app.use("/adotantes", adotanteRouter);
